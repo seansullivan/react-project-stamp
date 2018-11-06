@@ -48,7 +48,7 @@ if (!shell.which('git')) {
         const REACT_STARTER_REPO = 'git@github.com:seansullivan/react-starter.git';
 
         shell.exec(`git clone --depth=1 ${REACT_STARTER_REPO} ${projectName} && rm -rf ${root}/.git`);
-        shell.exec(`cd ${root} && ~/.nvm/nvm.sh use && yarn`);
+        shell.exec(`cd ${root} && . $NVM_DIR/nvm.sh use && yarn`);
     } catch (e) {
         // Deal with the fact the chain failed
         console.log(chalk.red(e));
